@@ -8,7 +8,7 @@ import lombok.experimental.Accessors;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Accessors(chain = true)
+@Accessors
 public class UserDTO {
 
     public String name;

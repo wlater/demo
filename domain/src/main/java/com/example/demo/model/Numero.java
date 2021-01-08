@@ -1,0 +1,18 @@
+package com.example.demo.model;
+
+import org.hibernate.type.descriptor.sql.BitTypeDescriptor;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Accessors(chain = true)
+public class Numero {
+    private String codigoTermo;
+    private String tipoTermo;
+    private BitTypeDescriptor flagAceite;
+}
