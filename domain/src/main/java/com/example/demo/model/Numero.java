@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
-@Data
+//@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
@@ -15,4 +15,28 @@ public class Numero {
     private String codigoTermo;
     private String tipoTermo;
     private BitTypeDescriptor flagAceite;
+
+    public String getCodigoTermo() {
+        return codigoTermo;
+    }
+
+    public void setCodigoTermo(String codigoTermo) {
+        this.codigoTermo = codigoTermo;
+    }
+
+    public String getTipoTermo() {
+        return tipoTermo;
+    }
+
+    public void setTipoTermo(String tipoTermo) {
+        this.tipoTermo = tipoTermo;
+    }
+
+    public BitTypeDescriptor getFlagAceite() {
+        return flagAceite;
+    }
+
+    public void setFlagAceite(BitTypeDescriptor flagAceite) {
+        this.flagAceite = flagAceite;
+    }
 }

@@ -9,7 +9,7 @@ import javax.persistence.*;
 
 
 
-@Data
+//@Data
 @NoArgsConstructor
 @Accessors(chain = true)
 @Entity
@@ -22,5 +22,28 @@ public class User {
 
     @Embedded
     private Numero termos;
-    
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public Numero getTermos() {
+        return termos;
+    }
+
+    public void setTermos(Numero termos) {
+        this.termos = termos;
+    }
 }
