@@ -8,10 +8,10 @@ import lombok.experimental.Accessors;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Accessors
+@Accessors(chain = true)
 public class UserDTO {
 
-    public String name;
-    public String cpf;
+//    public String name;
+//    public String cpf;
     
 }

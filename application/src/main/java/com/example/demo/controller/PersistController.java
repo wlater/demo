@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.error.GlobalExeptionHandler;
 import com.example.demo.service.GetOldDataService;
 
+import com.example.demo.service.GetOldDataServiceImpl;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PersistController {
     @Autowired
-    private GetOldDataService getOldDataService;
+    private GetOldDataServiceImpl getOldDataService;
 
     @RabbitListener(queues = "getAll_legacy_request")
     public void getAllOldData( String message ) throws GlobalExeptionHandler {

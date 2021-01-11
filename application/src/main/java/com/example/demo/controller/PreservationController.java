@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/local")
 public class PreservationController {
 
-    @GetMapping("/{RapMeta}")
-    public ResponseEntity<?> retriveData(@PathVariable("RapMeta")  String RapMeta) {
-        UserDTO user = new UserDTO()
-        .setName("joao")
-        .setCpf(RapMeta);
-        
-        return ResponseEntity.ok(user);
-    }
+//    @GetMapping("/{RapMeta}")
+//    public ResponseEntity<?> retriveData(@PathVariable("RapMeta")  String RapMeta) {
+//        UserDTO user = new UserDTO()
+//        .setName("joao")
+//        .setCpf(RapMeta);
+//
+//        return ResponseEntity.ok(user);
+//    }
 
 }
