@@ -10,18 +10,13 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class MessagingConfig {
-    public static final String QUEUE_GETALL = "bank_getall";
-    public static final String QUEUE_GETONE = "bank_getone";
+    public static final String QUEUE_AUTH = "auth_request";
     public static final String EXCHANGE = "bank_auth_exchange";
-    public static final String ROUTING_GETALL = "bank_getall";
-    public static final String ROUTING_GETONE = "bank_getone";
+    public static final String ROUTING_AUTH = "auth_routingKey";
+
 
     @Bean
-    public Queue queueGetAll() { return new Queue(QUEUE_GETALL); }
-
-    @Bean
-    public Queue queueGetOne() { return new Queue(QUEUE_GETONE); }
-
+    public Queue queueAuth() { return new Queue(QUEUE_AUTH); }
 
     @Bean
     public TopicExchange exchange() {
@@ -29,14 +24,10 @@ public class MessagingConfig {
     }
 
     @Bean
-    public Binding bindingGetAll(Queue queue, TopicExchange exchange) {
-        return BindingBuilder.bind(queue).to(exchange).with(ROUTING_GETALL);
+    public Binding bindingAuth(Queue queueAuth, TopicExchange exchange) {
+        return BindingBuilder.bind(queueAuth).to(exchange).with(ROUTING_AUTH);
     }
 
-    @Bean
-    public Binding bindingGetOne(Queue queue, TopicExchange exchange) {
-        return BindingBuilder.bind(queue).to(exchange).with(ROUTING_GETONE);
-    }
 
     @Bean
     public MessageConverter converter() {

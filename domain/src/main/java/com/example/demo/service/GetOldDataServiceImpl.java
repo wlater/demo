@@ -21,7 +21,7 @@ public class GetOldDataServiceImpl implements GetOldDataService{
     @Override
     public HttpStatus getAll() throws GlobalExeptionHandler {
         try {
-            template.convertAndSend(MessagingConfig.EXCHANGE, MessagingConfig.ROUTING_GETALL, "ex");
+            template.convertAndSend(MessagingConfig.EXCHANGE, MessagingConfig.ROUTING_AUTH, "ex");
             return  HttpStatus.OK;
         }catch (Exception e){
             throw new GlobalExeptionHandler("Nenhum usuario foi encontrado.", 204);
@@ -31,7 +31,7 @@ public class GetOldDataServiceImpl implements GetOldDataService{
     @Override
     public HttpStatus getOneByCpf(String cpf) throws GlobalExeptionHandler {
         try {
-            template.convertAndSend(MessagingConfig.EXCHANGE, MessagingConfig.ROUTING_GETONE, cpf);
+            template.convertAndSend(MessagingConfig.EXCHANGE, MessagingConfig.ROUTING_AUTH, cpf);
             return  HttpStatus.OK;
         }catch (Exception e){
             throw new GlobalExeptionHandler("Usuario nao existente.", 204);

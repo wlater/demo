@@ -14,11 +14,14 @@ public class PersistController {
 
     @RabbitListener(queues = "getAll_legacy_request")
     public void getAllOldData( String message ) throws GlobalExeptionHandler {
+        System.out.println("GET ALL WORKING");
         getOldDataService.getAll();
+
     }
 
     @RabbitListener(queues = "getOne_legacy_request")
     public void getOneOldData( String cpf ) throws GlobalExeptionHandler {
+        System.out.println("GET one WORKING");
         getOldDataService.getOneByCpf(cpf);
     }
     
