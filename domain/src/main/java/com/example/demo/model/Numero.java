@@ -15,7 +15,6 @@ public class Numero {
     private String codigoTermo;
     private String tipoTermo;
     private BitTypeDescriptor flagAceite;
-
     public String getCodigoTermo() {
         return codigoTermo;
     }
