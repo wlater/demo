@@ -14,10 +14,10 @@ public class PreservationController {
 
     @GetMapping("/{RapMeta}")
     public ResponseEntity<?> retriveData(@PathVariable("RapMeta")  String RapMeta) {
-        UserDTO user = new UserDTO()
-        .setName("joao")
-        .setCpf(RapMeta);
-        
+        UserDTO user = new UserDTO();
+        user.setCpf("12345678910");
+        user.setName("blabla");
+
         return ResponseEntity.ok(user);
     }
 

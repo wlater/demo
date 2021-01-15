@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: demo
+
+  # Database Configuration
+  jpa:
+    database-platform: org.hibernate.dialect.SybaseDialect
+    database: SYBASE
+    show-sql: true
+
+
+  # Sybase Configuration
+  datasource:
+    url: jdbc:sybase:Tds:localhost:5000/oldb
+    username: sa
+    password: password
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.sybase.jdbc4.jdbc.SybDriver
+
+  jackson:
+    time-zone: America/Sao_Paulo
+
+#   RabbitMQ
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: bv_vh
+
+
+server:
+  port: 3031
